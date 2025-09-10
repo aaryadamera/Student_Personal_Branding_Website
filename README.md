@@ -15,7 +15,7 @@ It acts as a digital resume for recruiters and peers.
 ---
 
 ## 🚀 Live Website
-👉 [View Website](https://github.com/aaryadamera/Student_Personal_Branding_Website.git)
+👉 [View Website](https://aaryadamera.github.io/Student_Personal_Branding_Website/)
 
 ---
 
