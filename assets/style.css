@@ -1,0 +1,63 @@
+/* Professional portfolio style - formal gradient background, animations */
+:root{--bg1:#0b1220;--bg2:#071227;--accent:#3b82f6;--accent2:#10b981;--muted:#9aa4b2;}
+*{box-sizing:border-box}html,body{height:100%;margin:0;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#e6eef6;background:linear-gradient(180deg,var(--bg1),var(--bg2));-webkit-font-smoothing:antialiased}
+.container{max-width:1100px;margin:0 auto;padding:2rem}
+
+/* Header */
+.site-header{position:sticky;top:0;background:linear-gradient(180deg,rgba(2,6,23,0.6),rgba(2,6,23,0.25));backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.03);z-index:50}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1rem}
+.brand{font-weight:700;color:white;text-decoration:none;font-size:1.05rem}
+.nav{display:flex;gap:1rem;align-items:center}
+.nav-link{color:var(--muted);text-decoration:none;padding:0.45rem 0.7rem;border-radius:6px;transition:all .25s}
+.nav-link:hover{color:white;background:rgba(255,255,255,0.03)}
+.cta{background:linear-gradient(90deg,var(--accent),#4bd1f9);color:#022026;padding:0.45rem 0.75rem;border-radius:8px}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr 420px;gap:2rem;align-items:center;padding:4rem 0}
+.hero-left h1{font-size:2.4rem;margin:0 0 .6rem}
+.name{color:var(--accent);}
+.subtitle{color:var(--muted);margin-bottom:1rem}
+.description{color:#cbd5e1;margin-bottom:1rem;max-width:560px}
+.actions{display:flex;gap:1rem;margin-bottom:1rem}
+.btn{display:inline-block;padding:.6rem 1rem;border-radius:8px;text-decoration:none;font-weight:600}
+.primary{background:linear-gradient(90deg,var(--accent),#4bd1f9);color:#021a1a}
+.ghost{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.03)}
+
+/* photo frame */
+.photo-frame{width:360px;height:460px;position:relative;border-radius:14px;overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));box-shadow:0 20px 60px rgba(2,8,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+.cross{position:absolute;left:-10%;right:-10%;height:6px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.05),transparent);opacity:.9}
+.cross-1{top:60px;transform:rotate(22deg);animation:crossmove 5s linear infinite}
+.cross-2{bottom:60px;transform:rotate(-22deg);animation:crossmove 6s linear infinite}
+@keyframes crossmove{0%{transform:translateX(-8%) rotate(22deg)}50%{transform:translateX(8%) rotate(22deg)}100%{transform:translateX(-8%) rotate(22deg)}}
+.profile-photo{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s;transform-origin:center}
+.photo-frame:hover .profile-photo{transform:scale(1.02) rotate(-0.6deg)}
+
+/* grid & cards */
+.skills .grid,.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+.card{background:rgba(255,255,255,0.03);padding:1.2rem;border-radius:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 8px 30px rgba(2,8,23,0.6)}
+.reveal{opacity:0;transform:translateY(18px);animation:reveal 0.7s forwards 0.15s}
+@keyframes reveal{to{opacity:1;transform:none}}
+
+/* timeline */
+.timeline{margin-top:1rem}
+.timeline-item{display:flex;gap:1rem;align-items:flex-start;margin-bottom:1rem}
+.badge{width:64px;height:64px;border-radius:10px;background:linear-gradient(180deg,#071022,#0f2a3a);display:flex;align-items:center;justify-content:center;font-weight:700}
+.details h3{margin:0}.meta{color:var(--muted);font-size:.95rem;margin-bottom:.4rem}
+
+/* contact grid */
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+.contact-card a{color:var(--accent);text-decoration:none}
+
+/* certs */
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+.cert-card{display:flex;gap:1rem;align-items:center;padding:1rem}
+
+/* projects */
+.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.project-card .link{display:inline-block;margin-top:.6rem;color:var(--accent);text-decoration:none}
+
+/* footer */
+.site-footer{margin-top:3rem;padding:1.2rem 0;border-top:1px solid rgba(255,255,255,0.02);color:var(--muted)}
+
+/* responsive */
+@media(max-width:990px){.hero{grid-template-columns:1fr;}.skills .grid,.project-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr} .nav{display:none}}
